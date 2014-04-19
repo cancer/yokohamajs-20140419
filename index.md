@@ -1,6 +1,6 @@
 帰ってきたYokohama.js (#yjs20140419)
 
-## JavaScriptでKeyframeAnimationをつくろう
+## JavaScriptでKeyframeAnimationを<br>作ってみた
 
 ---
 
@@ -9,9 +9,11 @@
 
 宇野 陽太([@cancer6](https://twitter.com/cancer6))
 
-株式会社モバイルファクトリーというところでフロントエンドエンジニアやってます
+株式会社モバイルファクトリーというところで<br>
+フロントエンドエンジニアやってます
 
-最近はBackbone / Marionette / AngularJS あたりを触ったりCSS書いたり
+最近はBackbone / Marionette / AngularJS あたりを触ったり<br>
+CSS書いたりなど
 
 ---
 
@@ -30,8 +32,6 @@
 
 ## めんどくさい
 
-![](http://i.gyazo.com/e1d2056581d55bd0d5de08b5fafdc4ec.png)
-
 ---
 
 ## どうせJS使うなら全部JSでやってしまおう
@@ -48,10 +48,10 @@ https://github.com/jlongster/css-animations.js
 - オブジェクトでkeyframeのプロパティを渡してあげる
 
 ```javascript
-var anim1 = CSSAnimations.get('anim1');
-var anim2 = CSSAnimations.create('anim2', {
-    '0%': { 'background-color': 'red' },
-    '100%': { 'background-color': 'blue' }
+var anim1 = CSSAnimations.get("anim1");
+var anim2 = CSSAnimations.create("anim2", {
+    "0%": { "background-color": "red" },
+    "100%": { "background-color": "blue" }
 ```
 
 --
@@ -63,15 +63,15 @@ var anim2 = CSSAnimations.create('anim2', {
 - アニメーションのプロパティ(animation-name/animation-durationなど)は別途DOMの操作が必要
 
 ```javascript
-var anim = CSSAnimations.create('anim', {
-    '0%': {
+var anim = CSSAnimations.create("anim", {
+    "0%": {
       opacity: "0.5",
       border-radius: "0"
       "-webkit-border-radius": "0"
       transform: "translate(0, 0) rotate(90deg) scale(1)"
       "-webkit-transform": "translate(0, 0) rotate(90deg) scale(1)"
     },
-    '100%': {
+    "100%": {
       opacity: "1",
       border-radius: "5px"
       "-webkit-border-radius": "5px"
@@ -79,20 +79,18 @@ var anim = CSSAnimations.create('anim', {
       "-webkit-transform": "translate(100px, 50px) rotate(180deg) scale(2)"
     }
 
-$('#animation').css({
-  'animation-name': 'anim',
-  'animation-duration': '5s'
-  'animation-timing-function': 'linear'
-  'animation-delay': '1s'
-  'animation-fill-mode': 'both'
+$("#animation").css({
+  "animation-name": "anim",
+  "animation-duration": "5s"
+  "animation-timing-function": "linear"
+  "animation-delay": "1s"
+  "animation-fill-mode": "both"
 });
 ```
 
 ---
 
 ## まだめんどくさい
-
-![](http://i.gyazo.com/e1d2056581d55bd0d5de08b5fafdc4ec.png)
 
 ---
 
@@ -106,7 +104,7 @@ https://github.com/cancer/keyframe-animations.js
 - アニメーションのプロパティも一緒に設定できます
 
 ```javascript
-animation = keyframeAnimation.setup({
+var animation = keyframeAnimation.setup({
   name: "anim",
   keyframe: {
     "0%": {
@@ -163,12 +161,12 @@ animation.animate($("#animation"), function($element){
 ![](http://i.gyazo.com/90622a58e2134b64bfdf3dc47111899e.png)
 
 ```javascript
-animationLibrary = new AnimationLibrary();
+var animationLibrary = new AnimationLibrary();
 animationLibrary.setupModalAnimation();
 ```
 こんな感じで
 
 ---
 
-## ご清聴ありがとうございました
+### ご清聴ありがとうございました
 
